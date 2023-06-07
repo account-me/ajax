@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>جلب بيانات GET من موقع خارجي</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: 'https://example.com/data',
+                method: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    // عرض البيانات المستلمة في الصفحة
+                    $('#data-container').html(data.message);
+                },
+                error: function() {
+                    alert('حدث خطأ أثناء جلب البيانات');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="data-container"></div>
+</body>
+</html>
